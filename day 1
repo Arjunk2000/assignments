@@ -1,1 +1,83 @@
-code
+print Last Three Digit Of A Number 1557890
+public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter numbers");
+        int n = sc.nextInt();
+        System.out.print(n % 1000);
+    }
+    
+    print Alternate Manner In A Given Range(1, 100)
+    public static void main(String args[]) {
+        int n = 1;
+        int a = 100;
+        System.out.print("The Numbers from " + n + " to " + a + " is: ");
+        while (n < a) {
+            System.out.print(n + "," + a + ",");
+            n++;
+            a--;
+        }
+    }
+    
+    print avg age from 12-15
+    public static void main(String args[]) {
+        int n = 12;
+        int a = 15;
+        System.out.print("\nAvg of Numbers from " + n + " to " + a + " is: ");
+        int count = 0;
+        int sum = 0;
+        while (n <= a) {
+            sum += n;
+            n++;
+            count++;
+        }
+        System.out.print((double) sum / count);
+    }
+    
+    taking input and classifying the age 
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n < 5) {
+            System.out.println("baby");
+        } else if (n >= 5 && n < 10) {
+            System.out.println("toddler");
+        } else if (n >= 10 && n < 18) {
+            System.out.println("teengaed");
+        } else if (n >= 18 && n < 25) {
+            System.out.println("adult");
+        } else {
+            System.out.printf("grown old");
+        }
+    }
+}
+
+prime or not
+Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        System.out.print("\nThe given Number " + num + " is: ");
+        int m = 0;
+        int i = 2;
+        while (i * i <= num) {
+            if (num % i == 0) {
+                m++;
+                break;
+            }
+            i++;
+        }
+        if (m != 0)
+            System.out.print("Not Prime");
+        else
+            System.out.print("Prime");
+    
+    sum of squares from 1 to 10
+    Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int sum = 0;
+        for (int i = 1; i <= num; i++)
+            sum += (i * i);
+        System.out.println("\nSum of Squares from 1 to " + num + " is: " + sum);
+    
+    
+    
+    
