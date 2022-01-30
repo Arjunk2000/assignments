@@ -1,0 +1,143 @@
+Check if a year is leap year or not
+import java.util.Scanner;
+public class LeapYear {
+   public static void main(String[] args){
+      int year;
+      System.out.println("Enter an Year :: ");
+      Scanner sc = new Scanner(System.in);
+      year = sc.nextInt();
+
+      if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0))
+         System.out.println(" leap year");
+      else
+         System.out.println(" not a leap year");
+   }
+}
+
+Find permutation and combination of numbers
+import java.util.Scanner;
+ 
+public class Main
+{
+    public static int fact(int num){
+        int fact=1, i;
+        for(i=1; i<=num; i++){
+            fact = fact*i;
+        }
+        return fact;
+    }
+    public static void main(String args[]){
+        int n, r;
+        Scanner scanner = new Scanner(System.in);
+ System.out.print("n : ");
+        n = scanner.nextInt();
+        System.out.print("r : ");
+        r = scanner.nextInt();
+ 
+       System.out.println("nCr is " +(fact(n)/(fact(n-r)*fact(r))));
+        System.out.println("nPr is " +(fact(n)/(fact(n-r))));
+    }
+}
+
+Java Program To Calculate Distance Between Two Points
+import java.util.Scanner;
+ 
+public class Main
+{
+  
+	public static void main(String arg[])	
+	{
+	     Scanner scanner = new Scanner(System.in);
+            int x1=scanner.nextInt();
+            int x2=scanner.nextInt();
+            int y1=scanner.nextInt();
+            int y2=scanner.nextInt();
+	    double dis;
+	    dis=Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));	 	    
+            System.out.println("distancebetween"+"("+x1+","+y1+"),"+"("+x2+","+y2+")===>"+dis);
+	}
+}
+
+Sum of even and odd digits
+import java.util.Scanner;
+public class Main{
+public static void main (String args[]){
+int i,num;  
+int oddSum=0,evenSum=0;
+Scanner scan=new Scanner(System.in);
+System.out.print("Enter the number for num: \n");
+num=scan.nextInt();
+for(i=1; i<=num; i++){  
+if(i%2==0) 
+    evenSum=evenSum+i;
+else
+    oddSum=oddSum+i;
+}
+System.out.println("Sum of all odd numbers are: "+oddSum);
+System.out.println("Sum of all even numbers are: "+evenSum);
+}
+}
+
+Reverse a number
+import java.util.Scanner;
+public class Main  
+{  
+public static void main(String[] args)   
+{  
+     Scanner scanner = new Scanner(System.in);
+            int number=scanner.nextInt();
+int reverse = 0;  
+while(number != 0)   
+{  
+int remainder = number % 10;  
+reverse = reverse * 10 + remainder;  
+number = number/10;  
+}  
+System.out.println("The reverse of the given number is: " + reverse);  
+}  
+}  
+
+WAP to print first x terms of the series 3N + 2 which are not multiples of 4.
+import java.util.Scanner;
+
+public class Main
+{
+public static void main(String[] args)
+{
+Scanner s = new Scanner(System.in);
+int num = s.nextInt();
+int N=1;
+		while (N < num) {
+			int ap = 3 * N + 2;
+			if (ap % 4 != 0) {
+				System.out.print(ap + " ");
+			}
+			N++;
+		}
+	}
+}
+
+Compound Intrest
+import java.util.*;
+public class Main
+{
+    public static void main(String args[]) 
+    {
+        
+    	Scanner sc = new Scanner(System.in);
+        float p, r, t, n;
+        System.out.println("Enter the Principal : ");
+        p = sc.nextFloat();    
+        System.out.println("Enter the Rate of interest : ");
+        r = sc.nextFloat();     
+        System.out.println("Enter the Time period : ");
+        t = sc.nextFloat();    
+        System.out.println("Enter the number of times that interest is compounded per unit t");
+        n=sc.nextFloat();     
+        sc.close();
+    	double amount = p * Math.pow(1 + (r / n), n * t);
+        double cinterest = amount - p;
+        System.out.println("Compound Interest after " + t + " years: "+cinterest);
+        System.out.println("Amount after " + t + " years: "+amount);
+    }
+}
