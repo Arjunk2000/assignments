@@ -37,7 +37,7 @@ public static void main(String args[])
   
   Write a program to print 10 to 1 using while loop
  package com.company;
-public class main{ 
+public class Main{ 
  public static void main(String args[])
 	{
 		int i=10;
@@ -52,7 +52,7 @@ public class main{
   Write a program to print 2,4,6,8,10 using for loop and  while loop
   
   package com.company;
-public class perimeter {
+public class Main {
     public static void main(String args[]) {
         int n =0;
         while (n <=10) {
@@ -64,7 +64,7 @@ public class perimeter {
     
     Write a program to print 10, 8, 6, 4, 2 using for loop and  while loop
     package com.company;
-public class perimeter {
+public class Main{
     public static void main(String args[]) {
         int n = 10;
         while (n > 0) {
