@@ -1,0 +1,77 @@
+Write algorithm that checks two numbers and print maximum of Two numbers
+
+start the program
+input the numbers a and b
+if a>b print(a is greater)
+if b>a print (b is greatrer)
+end
+
+Write an Algorithm that checks two numbers and print minimum of Two numbers
+
+start the program
+input the numbers a and b
+if a<b print(a is minimum)
+if b>a print (b is minimum)
+end
+
+Write an Algorithm that checks two numbers and print average of Two numbers
+
+start the program
+input the numbers a and b
+make average=(a+b)/2
+print(average)
+end
+
+Write a program to print 1 to 10 using while loop
+
+public static void main(String args[])
+	{
+		int i=1;
+		System.out.println("Output is : ");
+		while(i<=10)	
+		{
+			System.out.println(i);
+			i++;
+		}
+	}
+  
+  Write a program to print 10 to 1 using while loop
+ package com.company;
+public class main{ 
+ public static void main(String args[])
+	{
+		int i=10;
+		System.out.println("Output is : ");
+		while(i>0)	
+		{
+			System.out.println(i);
+			i--;
+		}
+	}
+  
+  Write a program to print 2,4,6,8,10 using for loop and  while loop
+  
+  package com.company;
+public class perimeter {
+    public static void main(String args[]) {
+        int n =0;
+        while (n <=10) {
+            System.out.print(n + ",");
+            n += 2;
+        }
+    }
+    }
+    
+    Write a program to print 10, 8, 6, 4, 2 using for loop and  while loop
+    package com.company;
+public class perimeter {
+    public static void main(String args[]) {
+        int n = 10;
+        while (n > 0) {
+            System.out.print(n + ",");
+            n -= 2;
+        }
+    }
+    }
+    
+  
