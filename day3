@@ -1,0 +1,80 @@
+
+1.	Finding max of 3 numbers using nested if-else block.
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int max = a;
+        if (max > b) {
+            if (max < c) {
+                max = c;
+            }
+        } else if (b > c)
+            max = b;
+        else
+            max = c;
+        System.out.println("great number: " + max);
+    }
+}
+
+Check if the triangle is valid with it's given sides. Note: do check for negative numbers, and zero-length sides.
+double side1, side2, side3;
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Please Enter Three sides of Triangle ");
+    side1 = sc.nextDouble();
+    side2 = sc.nextDouble();
+    side3 = sc.nextDouble();
+    if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+        System.out.println("Side Can not be Zero or Negative");
+        return;
+    }
+    else if ((side1 + side2 > side3) &&
+            (side2 + side3 > side1) &&
+            (side1 + side3 > side2)) {
+        System.out.println("It is a Valid Triangle");
+    } else {
+        System.out.println("It is Not a Valid Triangle");
+    }
+}
+
+
+Check if the Quadrilateral is valid for the given  4 angles. 
+	Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+        int j = a + b + c + d;
+        if (j == 360) {
+            System.out.println("valid");
+        } else
+            System.out.println("not valid");
+    }
+}
+
+
+Write a program that takes user input and keeps displaying the first and second digits for the entered number. 
+public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("User Input:: ");
+        int num = sc.nextInt();
+        if (num == -1)
+            return;
+        while (true) {
+            if (num >= 2)
+                System.out.println("output" String.valueOf(num).charAt(0) + "," + String.valueOf(num).charAt(1));
+            }
+        }
+
+private static void checkForVowelAndCase() {
+		Scanner sc = new Scanner(System.in);
+		boolean isVowel=false;
+		System.out.print("Enter a Character:: ");
+		char letter = sc.next().charAt(0);
+		String caseMessage=Character.isUpperCase(letter)==true ? "Upper Case":"Lower Case";
+		letter=Character.toLowerCase(letter);
+		if(letter=='a'||letter=='e'||letter=='i'||letter=='o'||letter=='u') {
+			isVowel=true;
+		}
+		System.out.println("Hi The Given Letter is in "+caseMessage+" and it's "+(isVowel ? "Vowel":"Not Vowel"));
+	}
