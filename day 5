@@ -1,0 +1,82 @@
+Take an array and a number that needs to be checked if present in the array. If number is present, print number is found, else print number is not found
+public static void checkNumber(int[] arr, int number) {
+		int i = 0;
+		boolean flag = false;
+		for (i = 0; i < arr.length; i++) {
+			if (arr[i] == target) {
+				System.out.println("number is  Found");
+        else{
+        System.out.println("number is not Found");
+        }
+        }
+        
+Take an array and a number that needs to be checked if present in the array. If number is present, print number is found along with the index at which it is present, else print number is not found
+Take an array and a number that needs to be checked if present in the array. If number is present, print number is found along with the last index at which it is present, else print number is not found
+public static void checkNumber(int[] arr, int number) {
+		int i = 0;
+		boolean flag = false;
+		for (i = 0; i < arr.length; i++) {
+			if (arr[i] == target) {
+				System.out.println("\nNumber " + target + " found at Index: " + (i + 1));
+				flag = true;
+				break;
+			}
+		}
+		for (int j = arr.length - 1; j > 0; j--) {
+			if (arr[j] == target && j != i) {
+				System.out.println("Number " + number + " found at Last Index : " + (j + 1));
+				return;
+			}
+		}
+
+		if (!flag) {
+			System.out.println("number is not Found");
+		}
+	}
+
+
+print diamond
+	public static void Diamond(int n)
+	{
+		int space = n - 1;
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < space; j++)
+				System.out.print(" ");
+			for (int j = 0; j <= i; j++)
+				System.out.print("* ");
+	
+			System.out.print("\n");
+			space--;
+		}
+		for (int i = n; i > 0; i--)
+		{
+			for (int j = 0; j < space; j++)
+				System.out.print(" ");
+			for (int j = 0; j < i; j++)
+				System.out.print("* ");
+	
+			System.out.print("\n");
+			space++;
+		}
+	}
+	
+  Write a program to calculate the sum of following series where you can initialise n as some number
+public static void findSum(int n)
+    {
+        int sum = 0;
+        for (int x = 1; x <= n; x++)
+            sum += (1 / x);
+        return sum;
+    }
+    public static void main(String args[])
+    {
+    Scanner sc=new Scaner(system.in); 
+        int n = sc.nextInt();
+        System.out.println(findSum(n));
+    }
+}
+
+
+
+
