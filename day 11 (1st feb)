@@ -1,0 +1,142 @@
+Write a program to print the product of the decimal and int numbers ex: 8.2 and 6
+package com.packages;
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args){
+     Scanner sc = new Scanner(System.in);
+        double d= sc.nextDouble();
+        int i= sc.nextInt();
+            System.out.println("Result will be: "+(float)d*i);
+    }
+}
+
+o/p:
+8.2
+6
+Result will be: 49.199997
+
+
+Print the ASCII value of any character user proides
+package com.packages;
+import java.util.Scanner;
+public class demo
+{
+    public static void main(String []args)
+    {
+        System.out.print("Enter a character: ");
+        Scanner sc = new Scanner(System.in);
+        char chr = sc.next().charAt(0);
+        int asciiValue = chr;
+        System.out.println("ASCII value of " +chr+ " is: "+asciiValue);
+    }
+}
+
+
+Write a program to add 3 to the ASCII value of the any character user proides and print the equivalent character.
+package com.packages;
+import java.util.Scanner;
+public class demo {
+    public static void main (String[] args) {
+        System.out.print("input a character: ");
+        char ch = new Scanner(System.in).next().charAt(0);
+        System.out.println("Value of Ascii after adding 3 to a given character: " + (char) ((int) ch + 3));
+    }
+}
+
+
+Write a Java program to convert temperature from Fahrenheit to Celsius degree.
+package com.packages;
+import java.util.Scanner;
+public class demo
+        {
+public static void main (String []args)
+        {
+            Scanner sc = new Scanner(System.in);
+            float Fahrenheit= sc.nextFloat();
+            float Celsius;
+
+        Celsius = ((Fahrenheit-32)*5)/9;
+        System.out.println("Temperature in celsius is: "+Celsius);
+        }
+        }
+        
+ Write a Java program that reads a number in inches, converts it to meter.
+ package com.packages;
+import java.util.Scanner;
+public class demo {
+
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        int a;
+        a=s.nextInt();
+        double c=a*0.0254;
+        System.out.print(c);
+    }
+}
+
+Write a Java program to convert minutes into a number of years and days
+package com.packages;
+import java.util.Scanner;
+public class demo {
+
+    public static void main(String[] Strings) {
+
+
+        double minutesInYear = 60 * 24 * 365;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Input the number of minutes: ");
+
+        double min = input.nextDouble();
+
+        long years = (long) (min / minutesInYear);
+        int days = (int) (min / 60 / 24) % 365;
+
+        System.out.println((int) min + " minutes is approximately " + years + " years and " + days + " days");
+    }
+}
+
+
+Take String input as Name of the city and convert it to reverse string and show on the console.
+package com.packages;
+import java.util.Scanner;
+public class demo {
+    public static void main (String[] args) {
+Scanner sc= new Scanner(System.in);
+        String  str= sc.nextLine();
+                String nstr="";
+        char ch;
+        System.out.print("Original word: ");
+        System.out.println(str);
+        for (int i=0; i<str.length(); i++)
+        {
+            ch= str.charAt(i);
+            nstr= ch+nstr;
+        }
+        System.out.println("Reversed word: "+ nstr);
+    }
+}
+
+
+Check if a string is pallindrome or not. eg. input : ABCBA
+package com.packages;
+import java.util.Scanner;
+class demo
+{
+    public static void main(String [] args)
+    {
+        String original, reverse = ""; // Objects of String class
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a string OR number" );
+        original = in.nextLine();
+        int length = original.length();
+        for ( int i = length - 1; i >= 0; i-- )
+            reverse = reverse + original.charAt(i);
+        if (original.equals(reverse))
+            System.out.println(" palindrome.");
+        else
+            System.out.println("NOT palindrome.");
+    }
+}
