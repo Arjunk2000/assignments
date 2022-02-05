@@ -1,0 +1,65 @@
+WAP to caluclate no. of digits in a number entered by user.
+package com.packages;
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        int number, count = 0, temp;
+        Scanner scanner;
+        scanner = new Scanner(System.in);
+
+        System.out.println("Enter an Integer");
+        number = scanner.nextInt();
+
+        temp = number;
+        while (temp != 0) {
+            temp = temp / 10;
+            ++count;
+        }
+
+        System.out.format("Number of Digits in %d = %d", number, count);
+    }
+}
+
+Apply do while loop to calculat factorial of a number such that, program asks user, if he wants to continue, if yes, program should run again
+package com.packages;
+import java.util.Scanner;
+public class demo {
+    public static void findFactorial(String[] args) {
+        int fact = 1, num, i = 1;
+        System.out.print("Enter a number: ");
+        num = new Scanner(System.in).nextInt();
+        do {
+            fact *= i++;
+        } while (i <= num);
+        System.out.println("Factorial Is: " + fact);
+
+        System.out.println("Do You want to Continue:y/n");
+        char choice = new Scanner(System.in).next().charAt(0);
+        if (choice == 'n') return;
+        else {
+            findFactorial();
+        }
+    }
+}
+
+
+WAP to creat a fuction that check if no. is odd or even. call this function from main method
+import java.util.Scanner;
+public class demo
+{
+    public static void main(String[] args)
+    {
+        int n;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the num:");
+        n = s.nextInt();
+        if(n % 2 == 0)
+        {
+            System.out.println("The given number "+n+" is Even ");
+        }
+        else
+        {
+            System.out.println("The given number "+n+" is Odd ");
+        }
+    }
+}
