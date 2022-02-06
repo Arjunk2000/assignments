@@ -1,4 +1,23 @@
 write a program to print given character is vovel or Consonant using ternary operator
+package com.packages;
+import java.util.Scanner;
+
+public class demo {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        boolean isVowel = false;
+        System.out.print("Enter a Character:: ");
+        char letter = sc.next().charAt(0);
+        String caseMessage = Character.isUpperCase(letter) == true ? "Upper Case" : "Lower Case";
+        letter = Character.toLowerCase(letter);
+        if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+            isVowel = true;
+        }
+        System.out.println(" Given Letter is in " + caseMessage + " and it's " + (isVowel ? "Vowel" : "Not Vowel"));
+    }
+}
 
 write a program to print name of the month by passing number of the month
 using switch or if else
@@ -54,3 +73,59 @@ public class demo {
         }
     } 
 }
+
+WAP to check whether given number is lesser or
+greater than 10 if its lesser than check further if its lesser or greater than
+5 using ternary operator and Print greater or smaller accordingly.
+package com.packages;
+import java.util.Scanner;
+class demo
+{
+    public static void main(String args[])
+    {
+Scanner sc = new Scanner(System.in);
+int n1= sc.nextInt();
+        int  n2 = 10, n3 = 5, max,min;
+
+
+        max = (n1 > n2) ?
+                (n1 > n3 ? n1 : n3) :
+                (n2 > n3 ? n2 : n3);
+
+        min = (n1 < n2) ?
+                (n1 < n3 ? n1 : n3) :
+                (n2 < n3 ? n2 : n3);
+
+
+        System.out.println("Largest number among " + n1 +
+                ", " + n2 + " and " + n3 +
+                " is " + max + ". " );
+
+        System.out.println("smallest number among " + n1 +
+                ", " + n2 + " and " + n3 +
+                " is " + min + ". " );
+    }
+}
+
+
+WAP to check whether given number is 10,20,30,40,50 or not any of these using ternary operator.
+package com.packages;
+import java.util.Scanner;
+class demo {
+    public static void main(String []args) {
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        boolean sum;
+        sum = (n1 == 10 || n1 == 20 || n1 == 30 || n1 == 40 || n1 == 50) ? true : false;
+        System.out.println(sum);
+    }
+}
+
+1. Evaluate below expression without running the code
+int x = 9, y = 12;
+int a = 2, b = 4, c = 6;
+int exp = 4/3 * (x + 34) + 9 * (a + b * c) + (3 + y * (2 + a)) / (a + b*y);
+ 1*43+9*26+(3+12*4)/50
+ 1*43+9*26+51/50	
+ 43+234+1
+ 278 
