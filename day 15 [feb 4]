@@ -1,0 +1,132 @@
+Length and breadth of a rectangle are 5 and 7 respectively. Write a program to calculate the area and perimeter of the rectangle.
+package com.packages;
+class demo{
+  public static void main(String[] args){
+    int x = 5;
+    int y = 7;
+    int area=(x*y);
+    int Perimeter= (2*(x+y));
+      System.out.println("Area is "+area+"\nPerimeter is "+Perimeter);
+  }
+}
+
+Write a program to calculate the perimeter of a triangle having sides of length 2,3 and 5 units.
+package com.packages;
+class demo{
+  public static void main(String[] args){
+    float x = 2;
+    float y = 3;
+    float z=5;
+
+    float Perimeter= (x+y+z);
+      System.out.println("\nPerimeter is "+Perimeter);
+  }
+}
+
+Write a program to add 8 to the number 2345 and then divide it by 3. Now, the modulus of the quotient is taken with 5 and then multiply the resultant value by 5. Display the final result.v
+package com.packages;
+class demo{
+public static void main(String[] args){
+    System.out.println((((8+2345)/3)%5)*5);
+  }
+}
+
+Now, solve the above question using assignment operators (eg. +=, -=, *=).
+
+
+Write a program to check if the two numbers 23 and 45 are equal.
+package com.packages;
+class demo{
+public static void main(String[] args){
+System.out.println(23 == 45);
+  }
+}
+
+Write a program to print the power of 7 raised to 5.
+package com.packages;
+import java.lang.Math;
+class demo{
+  public static void main(String[] args){
+    System.out.println(Math.pow(7,5));
+  }
+}
+
+Assign values of variables 'a' and 'b' as 55 and 70 respectively and then check if both the conditions 'a < 50' and 'a < b' are true.
+package com.packages;
+import java.util.*;
+class demo {
+    public static void main(String[] args) {
+        int a = 55;
+        int b = 70;
+        if (a < 50 && a < b) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+}
+
+
+Now solve the above question to check if atleast one of the conditions 'a < 50' or 'a < b' is true.
+package com.packages;
+import java.util.*;
+class demo {
+    public static void main(String[] args) {
+        int a = 55;
+        int b = 70;
+        if (a < 50 || a < b) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+}
+
+If the marks of Robert in three subjects are 78,45 and 62 respectively (each out of 100 ), write a program to calculate his total marks and percentage marks.
+package com.packages;
+import java.util.*;
+class demo {
+    public static void main(String[] args) {
+        float marks1 = 78;
+        float marks2 = 45;
+        float marks3 = 62;
+        System.out.println("total marks is " + (marks1 + marks2 + marks3));
+        System.out.println("percentage marks " + ((marks1 + marks2 + marks3) * 100) / 300 + "%");
+    }
+}
+
+Suppose the values of variables 'a' and 'b' are 6 and 8 respecrtively, write two programs to swap the values of the two variables.
+1 - first program by using a third variable
+import java.util.*;
+class demo{
+    public static void main(String[] args) {
+        int x=5, y=10, t;
+        System.out.println("before swapping numbers: "+x +"  "+ y);
+        t = x;
+        x = y;
+        y = t;
+        System.out.println("After swapping: "+x +"   " + y);
+        System.out.println( );
+    }
+}
+
+2 - second program without using any third variable
+( Swapping means interchanging the values of the two variables E.g.- If entered value of x is 5 and y is 10 then after swapping the value of x and y should become 10 and 5 respectively.)
+package com.packages;
+import java.util.*;
+class demo{
+    public static void main(String[] args) {
+        int x=5, y=10;
+
+
+        System.out.println("before swapping numbers: "+x +"  "+ y);
+
+       y=y-x;
+       x=y+x;
+       y=-(y-x);
+        System.out.println("After swapping: "+x +"   " + y);
+        System.out.println( );
+    }
+}
+
+Write a program to convert Fahrenheit into Celsius.
