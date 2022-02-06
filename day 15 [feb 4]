@@ -31,9 +31,6 @@ public static void main(String[] args){
   }
 }
 
-Now, solve the above question using assignment operators (eg. +=, -=, *=).
-
-
 Write a program to check if the two numbers 23 and 45 are equal.
 package com.packages;
 class demo{
@@ -87,9 +84,9 @@ package com.packages;
 import java.util.*;
 class demo {
     public static void main(String[] args) {
-        float marks1 = 78;
-        float marks2 = 45;
-        float marks3 = 62;
+        float marks1 = 88;
+        float marks2 = 55;
+        float marks3 = 69;
         System.out.println("total marks is " + (marks1 + marks2 + marks3));
         System.out.println("percentage marks " + ((marks1 + marks2 + marks3) * 100) / 300 + "%");
     }
@@ -147,7 +144,20 @@ public static void main (String []args)
         
      
   The total number of students in a class are 90 out of which 45 are boys. If 50% of the total students secured grade 'A' out of which 20 are boys, then write a program to calculate the total number of girls getting grade 'A'
-  
+  package com.packages;
+import java.util.Scanner;
+class demo {
+public static void main (String []args){
+        int totalstudents=90;
+        int totalboys=45;
+        int totalgirls=totalstudents-totalboys;
+
+        int Agrade=(totalstudents*50)/100;
+        int totalgirlsgotA=Agrade-20;
+    System.out.println("total girls got A grade "+totalgirlsgotA);
+        }
+    }
+
   
   Write a program to calculate the sum of the first and the second last digit of a 5 digit.
 E.g.- NUMBER : 12345        OUTPUT : 1+4=5
