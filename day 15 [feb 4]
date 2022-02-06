@@ -130,3 +130,84 @@ class demo{
 }
 
 Write a program to convert Fahrenheit into Celsius.
+package com.packages;
+import java.util.Scanner;
+public class demo
+        {
+public static void main (String []args)
+        {
+            Scanner sc = new Scanner(System.in);
+            float Fahrenheit= sc.nextFloat();
+            float Celsius;
+
+        Celsius = ((Fahrenheit-32)*5)/9;
+        System.out.println("Temperature in celsius is: "+Celsius);
+        }
+        }
+        
+     
+  The total number of students in a class are 90 out of which 45 are boys. If 50% of the total students secured grade 'A' out of which 20 are boys, then write a program to calculate the total number of girls getting grade 'A'
+  
+  
+  Write a program to calculate the sum of the first and the second last digit of a 5 digit.
+E.g.- NUMBER : 12345        OUTPUT : 1+4=5
+
+package com.packages;
+class demo{
+    public static void main(String[] args){
+        int n, first, second, third, forth, fifth, sum;
+        n = 12345;
+        first = n/10000;
+        n = n%10000;
+        second = n/1000;
+        n = n%1000;
+        third = n/100;
+        n = n%100;
+        forth = n/10;
+        fifth = n%10;
+        sum = first + forth;
+        System.out.println("sum : "+sum);
+    }
+}
+
+Write a program to calculate the sum of the digits of a 3-digit number.
+package com.packages;
+import java.util.Scanner;
+public class demo
+{
+    public static void main(String args[])
+    {
+        int m, n, sum = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the number:");
+        m = s.nextInt();
+        while(m > 0)
+        {
+            n = m % 10;
+            sum = sum + n;
+            m = m / 10;
+        }
+        System.out.println("Sum of Digits:"+sum);
+    }
+}
+
+Write a program to reverse a 3-digit number
+package com.packages;
+import java.util.Scanner;
+public class demo
+{
+    public static void main(String[] args){
+    int n, first, second, third, reverse;
+   
+    n = 123;
+    first = n/100;    
+    n = n%100;
+
+    second = n/10;    
+    third = n%10;      
+
+    
+    reverse = third*100 + second*10 + first;
+    System.out.println("reverse number : "+reverse);
+}
+}
