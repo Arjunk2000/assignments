@@ -1,0 +1,74 @@
+Write a method which returns a string by removing special charaters( &,$,:,+,@)
+spaces from the string
+Input: "Geekster-The%school:where+you@code:your-success$stories"
+Output : "eekster The school where you code your success stories
+
+package com.packages;
+class demo
+{
+    static void removeSpecialCharacter(String s)
+    {
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s.charAt(i) < 'A' || s.charAt(i) > 'Z' &&
+                    s.charAt(i) < 'a' || s.charAt(i) > 'z')
+            {
+                s = s.substring(0, i) + s.substring(i + 1);
+                i--;
+            }
+        }
+        System.out.print(s);
+    }
+    public static void main(String[] args)
+    {
+        String s = "Geekster-The%school:where+you@code:your-success$stories";
+        removeSpecialCharacter(s);
+    }
+}
+
+WAP to prove that intern() method guarantees to return unique String from from a String pool
+package com.packages;
+class demo
+{
+        public static void main(String args[]){
+            String s1=new String("hello");
+            String s2="hello";
+            String s3=s1.intern();
+            System.out.println(s1==s2);
+            System.out.println(s2==s3);
+        }
+}
+
+Write a method which accepts 10 digits mobile number as an Integer parameter and return a string containing country code with mobile number.
+Input: 7890765456
+Output : "+91-7890765456";
+
+-- Write a method which accepts a String as a parameter and returns ratio of vowels to consonants in String format
+Input: "We are Proud to be an India"
+Output : "11:10"
+package com.packages;
+import java.io.*;
+public class demo {
+    static void countCharacterType(String str)
+    {
+        int vowels = 0, consonant = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if ( (ch >= 'a' && ch <= 'z') ||
+                    (ch >= 'A' && ch <= 'Z') ) {
+                ch = Character.toLowerCase(ch);
+                if (ch == 'a' || ch == 'e' || ch == 'i' ||
+                        ch == 'o' || ch == 'u')
+                    vowels++;
+                else
+                    consonant++;
+            }
+        }
+        System.out.println("Vowels: " + vowels+ "Consonant: " + consonant);
+    }
+    static public void main (String[] args)
+    {
+        String str = "We are Proud to be an India";
+        countCharacterType(str);
+    }
+}
