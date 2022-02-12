@@ -1,0 +1,66 @@
+make an array with user inputs of size 10. , then find sum of all elements in array
+package com.packages;
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        int i,sum=0;
+        int arr[]=new int[10];
+        System.out.println("Enter 10 numbers");
+        Scanner sc=new Scanner(System.in);
+        for(i=0;i<10;++i)
+            arr[i]=sc.nextInt();
+        for(i=0;i<10;++i)
+            sum=sum+arr[i];
+        System.out.println("Sum of numbers is:"+sum);
+    }
+}
+
+make an array with user inputs of size 10. , then find midle element in an array
+package com.packages;
+import java.util.*;
+public class demo
+{
+    public static void main(String args[])
+    {
+        int n;
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number of elements you want to store: ");
+
+        n=sc.nextInt();
+
+        int[] array = new int[10];
+        System.out.println("Enter the elements of the array: ");
+        for(int i=0; i<n; i++)
+        {
+            array[i]=sc.nextInt();
+        }
+
+        int startIndex = 0, lastIndex = array.length - 1;
+        // Setting the mid index
+        int midIndex = startIndex + (lastIndex-startIndex)/2;
+        System.out.println("The mid index is "+midIndex+" and the element at mid is "+array[midIndex]);
+    }
+}
+
+make an array with user inputs of size 10. then print all positive numbers in an array		
+package com.packages;
+import java.util.Scanner;
+
+public class demo
+{
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int arr[] = new int[10];
+
+        System.out.println("Enter 10 numbers");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = in.nextInt();
+        }
+
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= 0)
+                System.out.print(arr[i] + ", ");
+        }
+    }
+}
