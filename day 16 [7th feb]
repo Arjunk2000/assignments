@@ -119,3 +119,32 @@ class demo {
             System.out.println("No");
     }
 }
+
+Compress the string
+package com.packages;
+import java.util.Arrays;
+public class demo {
+    public static void printRLE(String str)
+    {
+        int n = str.length();
+        int count = 1;
+        int i = 1;
+        for (i = 1; i < n; i++) {
+            if (str.charAt(i) == str.charAt(i - 1)) {
+                count++;
+            }
+            else {
+                System.out.print(str.charAt(i - 1));
+                System.out.print(count);
+                count = 1;
+            }
+        }
+        System.out.print(str.charAt(i - 1));
+        System.out.print(count);
+    }
+    public static void main(String[] args)
+    {
+        String str = "wwwwaaadexxxxxxywww";
+        printRLE(str);
+    }
+}
