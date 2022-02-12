@@ -29,3 +29,104 @@ class demo
         findMaximumProduct(A);
     }
 }
+
+check-if-an-array unique or not
+package com.packages;
+import java.util.*;
+public class demo {
+    public static void uniqueElement(int arr[])
+    {
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            set.add(arr[i]);
+        }
+        if (set.size() == 1)
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+    }
+    public static void main(String args[])
+    {
+        int arr[] = { 1,2,3,4,5,6,7 };
+        uniqueElement(arr);
+    }
+}
+
+check if two arrays are permutations of each other
+package com.packages;
+import java.util.HashMap;
+
+class demo
+{
+    static Boolean arePermutations(int arr1[], int arr2[])
+    {
+        if (arr1.length != arr2.length)
+            return false;
+        HashMap<Integer, Integer> hM = new HashMap<Integer, Integer>();
+        for (int i = 0; i < arr1.length; i++)
+        {
+            int x = arr1[i];
+            if (hM.get(x) == null)
+                hM.put(x, 1);
+            else
+            {
+                int k = hM.get(x);
+                hM.put(x, k+1);
+            }
+        }
+        for (int i = 0; i < arr2.length; i++)
+        {
+            int x = arr2[i];
+            if (hM.get(x) == null || hM.get(x) == 0)
+                return false;
+
+            int k = hM.get(x);
+            hM.put(x, k-1);
+        }
+        return true;
+    }
+
+
+    public static void main(String arg[])
+    {
+        int arr1[] = {1,2,3,4,5};
+        int arr2[] = {5,4,3,2,1};
+        if (arePermutations(arr1, arr2))
+            System.out.println("Arrays are permutations of each other");
+        else
+            System.out.println("Arrays are NOT permutations of each other");
+    }
+}
+
+give middle function in list and removes first and last element
+package com.packages;
+import java.util.Arrays;
+class demo {
+    public static int[] removeTheElement(int[] arr, int index)
+    {
+        if (arr == null || index < 0
+                || index >= arr.length) {
+            return arr;
+        }
+        int[] anotherArray = new int[arr.length - 1];
+        for (int i = 0, k = 0; i < arr.length; i++) {
+            if (i == index) {
+                continue;
+            }
+            anotherArray[k++] = arr[i];
+        }
+        return anotherArray;
+    }
+    public static void main(String[] args)
+    {
+        int[] arr = { 1, 2, 3, 4, 5 };
+        System.out.println("Original Array: "
+                + Arrays.toString(arr));
+        int index = 0;
+int index1=4;
+        System.out.println("Index to be removed: " + index +index1 );
+        arr = removeTheElement(arr, index);
+        System.out.println("Resultant Array: "
+                + Arrays.toString(arr));
+    }
+}
