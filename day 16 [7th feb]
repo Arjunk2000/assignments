@@ -1,0 +1,121 @@
+Reverse each word in string
+package com.packages;
+import java.io.*;
+import java.util.*;
+class demo {
+    static void reverseWords(String str)
+    {
+        Stack<Character> st=new Stack<Character>();
+        for (int i = 0; i < str.length(); ++i) {
+            if (str.charAt(i) != ' ')
+                st.push(str.charAt(i));
+            else {
+                while (st.empty() == false) {
+                    System.out.print(st.pop());
+                }
+                System.out.print(" ");
+            }
+        }
+        while (st.empty() == false) {
+            System.out.print(st.pop());
+        }
+    }
+    public static void main(String[] args)
+    {
+        String str = "hello world in java";
+        reverseWords(str);
+    }
+}
+
+Highest Occuring character
+package com.packages;
+public class demo
+    {
+        static final int ASCII_SIZE = 256;
+        static char getMaxOccuringChar(String str)
+        {
+            int count[] = new int[ASCII_SIZE];
+            int len = str.length();
+            for (int i=0; i<len; i++)
+                count[str.charAt(i)]++;
+
+            int max = -1; 
+            char result = ' '; 
+            for (int i = 0; i < len; i++) {
+                if (max < count[str.charAt(i)]) {
+                    max = count[str.charAt(i)];
+                    result = str.charAt(i);
+                }
+            }
+            return result;
+        }
+        public static void main(String[] args)
+        {
+            String str = "sample string";
+            System.out.println("Max occurring character is " +
+                    getMaxOccuringChar(str));
+        }
+    }
+    
+    If strings are equal or not
+    package com.packages;
+
+public class demo{
+    public static void main(String args[])
+    {
+        String string1 = new String("rome");
+        String string2 = new String("japan");
+        String string3 = new String("india");
+        String string4 = new String("china");
+        String string5 = new String("dubai");
+
+
+        System.out.println("Comparing " + string1 + " and " + string2
+                + " : " + string1.equals(string2));
+
+
+        System.out.println("Comparing " + string3 + " and " + string4
+                + " : " + string3.equals(string4));
+
+
+        System.out.println("Comparing " + string4 + " and " + string5
+                + " : " + string4.equals(string5));
+
+
+        System.out.println("Comparing " + string1 + " and " + string4
+                + " : " + string1.equals(string4));
+
+        System.out.println("Comparing " + string2 + " and " + string2
+                + " : " + string2.equals(string2));
+    }
+}
+
+check permutation
+package com.packages;
+import java.util.*;
+class demo {
+    static boolean arePermutation(String str1, String str2)
+    {
+        int n1 = str1.length();
+        int n2 = str2.length();
+        if (n1 != n2)
+            return false;
+        char ch1[] = str1.toCharArray();
+        char ch2[] = str2.toCharArray();
+        Arrays.sort(ch1);
+        Arrays.sort(ch2);
+        for (int i = 0; i < n1; i++)
+            if (ch1[i] != ch2[i])
+                return false;
+        return true;
+    }
+    public static void main(String[] args)
+    {
+        String str1 = "test";
+        String str2 = "tsdt";
+        if (arePermutation(str1, str2))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+    }
+}
