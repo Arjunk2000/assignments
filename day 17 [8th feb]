@@ -42,6 +42,14 @@ class demo
 Write a method which accepts 10 digits mobile number as an Integer parameter and return a string containing country code with mobile number.
 Input: 7890765456
 Output : "+91-7890765456";
+package com.packages;
+import java.math.BigInteger;
+public class demo {
+public static void main(String[] args) {
+private static String mobilenumberwithcode(BigInteger phNumber) {
+	return String.valueOf("+91-"+phNumber);
+}
+}
 
 -- Write a method which accepts a String as a parameter and returns ratio of vowels to consonants in String format
 Input: "We are Proud to be an India"
