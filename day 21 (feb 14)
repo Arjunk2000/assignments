@@ -1,0 +1,78 @@
+1.) https://leetcode.com/problems/number-of-students-doing-homework-at-a-given-time/
+
+2.) https://leetcode.com/problems/running-sum-of-1d-array/
+
+package com.packages;
+public demo {
+	public static void main(String[] args) {
+  
+public static int busyStudent(int[] startTime, int[] endTime, int queryTime) {
+		int count=0;
+		int i=0;
+		while(i<startTime.length) {
+			if(startTime[i]<=queryTime  ) {
+            if(endTime[i]>=queryTime){
+				count++;
+			}
+			i++;
+		}}
+		return count; 
+    }
+
+public int[] runningSum(int[] nums) {
+    int[] ans = new int[nums.length];
+    ans[0] = nums[0];
+    for (int i = 1; i < nums.length; i++)
+        ans[i] = ans[i-1] + nums[i];
+    return ans;
+    }
+}
+
+
+Given two arrays, find the intersection between them?
+Input : int[] arr1 = {1, 2, 3, 4, 5, 6};
+int[] arr2 = {2, 3, 4, 7, 8};
+Output : { 2, 3, 4}
+
+package com.packages;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.HashSet;
+public class demo
+{
+    public static void main(String[] args)
+    {
+        Integer[] firstArray = {0,1,2,3,4,5,6};
+        Integer[] secondArray = {2, 3, 4, 7, 8};
+        HashSet<Integer> set = new HashSet<>();
+        set.addAll(Arrays.asList(firstArray));
+        set.retainAll(Arrays.asList(secondArray));
+        System.out.println(set);
+        Integer[] intersection = {};
+        intersection = set.toArray(intersection);
+        System.out.println(Arrays.toString(intersection));
+    }
+}
+
+	
+  Write a program to find second largest element in a given Array in java
+  package com.packages;
+public class demo {
+    public static void main(String args[]){
+        int temp, size;
+        int array[] = {10, 20, 25, 63, 96, 57};
+        size = array.length;
+
+        for(int i = 0; i<size; i++ ){
+            for(int j = i+1; j<size; j++){
+
+                if(array[i]>array[j]){
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        System.out.println("Third second largest number is:: "+array[size-2]);
+    }
+}
