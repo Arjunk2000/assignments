@@ -1,0 +1,94 @@
+1.Find the frequency of odd and even in given matrix
+
+Input :
+[1 3 5]
+[2 4 1]
+[7 8 9]
+
+Output :
+Even = 3
+Odd = 6
+
+package com.packages;
+class demo {
+    static final int MAX = 100;
+    static void freq(int ar[][], int m, int n) {
+        int even = 0, odd = 0;
+
+        for (int i = 0; i < m; ++i)
+        {
+            for (int j = 0; j < n; ++j)
+            {
+                if ((ar[i][j] % 2) == 0)
+                    ++even;
+                else
+                    ++odd;
+            }
+        }
+        System.out.print(" Frequency of odd number =" +
+                odd + " \n");
+        System.out.print(" Frequency of even number = " +
+                even + " \n");
+    }
+    public static void main(String[] args) {
+        int m = 3, n = 3;
+
+        int array[][] = {{1, 3, 5}, {2,4,1}, {7, 8, 9}};
+
+        freq(array, m, n);
+    }
+}
+
+
+Find the sum of anti diagonal elements in given matrix
+
+Input :
+
+[1 5 7]
+[2 6 8]
+[5 8 2]
+
+Anti diagonal elements are = a[0][2] + a[1][1] + a[2][0]
+
+Output : 18
+
+package com.packages;
+import java.util.*;
+class demo {
+    private static int AntiDiagonalMatrix(int[][] mat) {
+        int row = mat.length - 1, col = mat[0].length - 1;
+        int sum = 0;
+        for (int i = 0; i <= row; i++) {
+            for (int j = col; j >= 0; j--) {
+                if (i + j == row)
+                    sum += mat[i][j];
+            }
+        }
+        return sum;
+    }
+}
+
+
+Display the string represented by each row of given matrix.
+
+Input:
+
+["Hello" "Geekster"]
+["Good" "Day"]
+
+Output:
+Row 0 : HelloGeekster
+Row 1 : GoodDay
+
+package com.packages;
+import java.util.Arrays;
+public class demo
+{
+        private static void printRow(String[][] mat) {
+            int row=0;
+            for(String[] val:mat) {
+                System.out.println("Row "+(row++)+" : "+String.join("",val));
+            }
+        }
+
+    }
