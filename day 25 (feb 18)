@@ -1,0 +1,67 @@
+ Create a class named 'Student' with String variable 'name' and integer variable 'roll_no'. 
+Assign the value of roll_no as '2' and that of name as "John" by creating an object of the class Student
+package basics;
+class Student{
+    String name;
+    int roll_no;
+}
+
+class Ans{
+    public static void main(String[] args){
+        Student s1 = new Student();
+        s1.name = "John";
+        s1.roll_no = 2;
+        System.out.println("Name is "+s1.name+" and roll number is "+s1.roll_no);
+    }
+}
+
+
+Assign and print the roll number, phone number and address of two students having names "Sam" and "John" respectively by creating two objects of class 'Student'.
+package basics;
+class student
+{
+    String address;
+    int roll_no;
+    long phone;
+    String name;
+}
+ class ans
+{
+    public static void main(String[] args)
+    {
+        student object1=new student();
+        student object2=new student();
+        object1.name="john";
+        object1.roll_no=169;
+        object1.address="bangalore jayanagar";
+        object1.phone=9880642135l;
+
+        object2.name="sam";
+        object2.roll_no=125;
+        object2.address="new delhi ";
+        object2.phone=9113554879l;
+
+        System.out.println("name is "+object1.name+"\nAdress is "+object1.address+"\nroll no is "+object1.roll_no+"\nphone number is "+object1.phone);
+        System.out.println();
+        System.out.println("name is "+object2.name+"\nAdress is "+object2.address+"\nroll no is "+object2.roll_no+"\nphone number is "+object2.phone);
+    }
+}
+
+Create a class 'Employee' with String variable 'name' and integer variable 'employee id'. 
+Create 4 Employee objects and store in array and display.*/
+
+class Employee
+{
+String name;
+int employee id;
+
+Employee emp[]=new Employee[4];
+		emp[0]=new Employee("Ram", 123);
+		emp[1]=new Employee("Sam", 332);
+		emp[2]=new Employee("John", 654);
+		emp[3]=new Employee("Rock", 899);
+
+		for(Employee employee:emp) {
+			employee.display();
+		}
+}
