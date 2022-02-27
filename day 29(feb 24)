@@ -1,4 +1,5 @@
 1. Override the taste method from the Candy class in the Chocolate class to return “tastes chocolately”. It should print “tastes sweet!” and then “tastes chocolately”.
+package com.assignment;
 public class Candy
 {
     public String taste()
@@ -26,7 +27,7 @@ class Chocolate extends Candy
 
  
 2. When a subclass inherits from a superclass, it also inherits its methods; however, it can also override the superclass methods (as well as declare and implement new ones). Consider the following Sports class:
-
+package com.assignment;
  class Sports{
 
     String getName(){
@@ -63,6 +64,7 @@ public class Solution{
 }
 
 3.Write a method that overloads the talk method by taking in a name and printing “Hello” with that name.
+package com.assignment;
 public class Test1
 {
     public static void talk()
