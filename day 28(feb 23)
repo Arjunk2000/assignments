@@ -1,1 +1,56 @@
 - create class Animal with various variables and methods in it to demonstrate
+- create multiples objects like dog, cat, cow, elephant etc and demomnstrate various approches to assign values to variables
+- auto generate getters and setters
+- demonstrate constructor chanining and create objects by passing no values, lesser value and more values
+-create static variable age and create a static method inside class named incrementAge() and
+
+
+
+package com.assignments;
+public class Animal {
+	static int age = 0;
+	public String name;
+	@Override
+	public String toString() {
+		return "Animal [name=" + name + ", speak=" + speak + ", Age="+age+"]";
+	}
+	public String speak;
+	static void incrementAge() {
+		age++;
+	}
+	public Animal() { 
+	}
+	public Animal(String name1) { 
+		name = name1;
+	}
+	public Animal(String name1, String speak1) { 
+		name = name1;
+		speak = speak1;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name1) {
+		this.name = name1;
+	}
+	void display() {
+		System.out.println("Animal name is " + name + " " + speak);
+	}
+	public static void main(String args[]) {
+		Animal p = new Animal("Dog");
+		Animal p1 = new Animal("Cat", "MEOw");
+		Animal p2 = new Animal();
+		Animal p3 = new Animal();
+		p.setName("Dog");
+		p.display();
+		p1.setName("Cat");
+		p1.display();
+		p2.setName("Cow");
+		p2.display();
+		p3.setName("Elephant");
+p3.display();
+		p.incrementAge();
+	p.display();
+		System.out.println(p);
+	}
+}
