@@ -1,0 +1,164 @@
+Revise Arrays concepts and practice programming problems from Leetcode
+
+
+1.. Write a Java program to separate 0s on left side and 1s on right side of an array of 0s and 1s in random order. 
+
+package com.packages;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args)
+    {
+        int arr[] = new int[]{ 0, 0, 1, 1, 0, 1, 1, 1,0 };
+        int result[];
+        System.out.println("Original Array ");
+        System.out.println(Arrays.toString(arr));
+
+        int n = arr.length;
+ 
+        result = separate_0_1(arr, n);
+        System.out.println("New Array ");
+        System.out.println(Arrays.toString(result));
+      }
+    
+    static int [] separate_0_1(int arr[], int n)
+     {
+        int count = 0;   
+     
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == 0)
+                count++;
+        }
+ 
+        for (int i = 0; i < count; i++)
+            arr[i] = 0;
+ 
+        for (int i = count; i < n; i++)
+            arr[i] = 1;
+    
+         return arr;
+     }       
+   }
+   
+   Write a Java program to check if a sub-array is formed by consecutive integers from a given array of integers.  
+
+Example:
+Input :
+nums = { 2, 5, 0, 2, 1, 4, 3, 6, 1, 0 }
+Output:
+The largest sub-array is [1, 7]
+Elements of the sub-array: 5 0 2 1 4 3 6
+
+package com.packages;
+import java.lang.Math;
+import java.util.Arrays;
+class solution
+{
+	static boolean is_consecutive(int nums[], int i, int j, int min, int max)
+	{
+		if (max - min != j - i) {
+			return false;
+		}
+
+		boolean check[] = new boolean[j - i + 1];
+
+		for (int k = i; k <= j; k++)
+		{
+			if (check[nums[k] - min]) {
+				return false;
+			}
+
+			check[nums[k] - min] = true;
+		}
+	
+		return true;
+	}
+	
+	public static void find_Max_SubArray(int[] nums)
+	 {
+		int len = 1;
+		int start = 0, end = 0;
+
+		for (int i = 0; i < nums.length - 1; i++)
+		{
+			int min_val = nums[i], max_val = nums[i];
+	
+			for (int j = i + 1; j < nums.length; j++)
+			{
+				min_val = Math.min(min_val, nums[j]);
+				max_val = Math.max(max_val, nums[j]);
+	
+				if (is_consecutive(nums, i, j, min_val, max_val))
+				{
+					if (len < max_val - min_val + 1)
+					{
+						len = max_val - min_val + 1;
+						start = i;
+						end = j;
+					}
+				}
+			}
+		}
+	
+		System.out.println("The largest sub-array is [" + start + ", "
+							+ end + "]");
+		System.out.print("Elements of the sub-array: ");
+	    for (int x = start; x <= end; x++)
+	     {
+			
+		  System.out.print(nums[x]+" ");			
+		 }	
+	}
+
+
+Write a Java program to find subarray which has the largest sum in a given circular array of integers.   
+
+Example:
+Input :
+nums1 = { 2, 1, -5, 4, -3, 1, -3, 4, -1 }
+nums2 = { 1, -2, 3, 0, 7, 8, 1, 2, -3 }
+Output:
+The sum of subarray with the largest sum is 6
+The sum of subarray with the largest sum is 21
+
+package com.packages;
+import java.util.Arrays;
+class solution {
+    public static int max_Subarray_Sum_Circular(int[] nums) {
+        int n = nums.length;
+        int result = nums[0];
+        int sum = nums[0];
+        for (int i = 1; i < n; i++) {
+            sum = Math.max(sum + nums[i], nums[i]);
+            result = Math.max(result, sum);
+        }
+        
+        int[] right_Sum = new int[n];
+        int[] right_Max = new int[n];
+        right_Sum[n - 1] = nums[n - 1];
+        right_Max[n - 1] = nums[n - 1];
+        for (int i = n - 2; i >= 0; i--) {
+            right_Sum[i] = right_Sum[i + 1] + nums[i];
+            right_Max[i] = Math.max(right_Sum[i], right_Max[i + 1]);
+        }
+        
+        int left_Sum = 0;
+        for (int i = 0; i < n - 2; i++) {
+            left_Sum += nums[i];
+            result = Math.max(result, left_Sum + right_Max[i + 2]);
+        }
+        
+        return result;
+    }
+	
+	public static void main(String[] args)
+	{
+		int[] nums1 = { 2, 1, -5, 4, -3, 1, -3, 4, -1 };
+		System.out.println("\nOriginal circular array: "+Arrays.toString(nums1));
+		System.out.println("The sum of subarray with the largest sum is " + max_Subarray_Sum_Circular(nums1));
+		
+		int[] nums2 = { 1, -2, 3, 0, 7, 8, 1, 2, -3 };
+		System.out.println("\nOriginal circular array: "+Arrays.toString(nums2));
+		System.out.println("The sum of subarray with the largest sum is " + max_Subarray_Sum_Circular(nums2));
+	}
+}
