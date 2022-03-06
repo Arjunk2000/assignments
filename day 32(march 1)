@@ -1,0 +1,65 @@
+ Write a program to replace a given substring in a sentence with another string. For example, in the sentence, ” A batman with bat” if we replace ”bat” with ”snow”, the new sentence should be printed as ”A snowman with snow”.
+
+package com.packages;
+import java.util.*;
+public class Replacestring{  
+public static void main(String args[]){  
+String s1="A batman with bat";  
+String replaceString=s1.replace('bat','snow');
+System.out.println(replaceString);  
+}
+}  
+
+WAP to tOGGLE each word in the String?
+Input: This is Geekster
+Output: tHIS iS gEEKSTER
+
+package com.packages;
+import java.util.*;
+class GFG
+{
+ 
+static void toggleChars(char str[])
+{
+    for (int i=0; i<str.length; i++)
+    {
+        if (str[i]>='A' && str[i]<='Z')
+            str[i] = (char) (str[i] + 'a' - 'A');
+        else if (str[i]>='a' && str[i]<='z')
+            str[i] = (char) (str[i] + 'A' - 'a');
+    }
+}
+
+public static void main(String[] args)
+{
+    char str[] = "This is Geekster".toCharArray();
+    toggleChars(str);
+    System.out.println("String after toggle ");
+    System.out.println(String.valueOf(str));
+}
+}
+
+
+
+3.) WAP to reverse tOGGLE each word in the String?
+Input: my name is khan
+Output: yM eMAN sI nAHK
+
+
+package com.packages;
+import java.lang.StringBuffer;
+public class ToggleReverse {
+   public static void main(String args[]){
+      String sample = "my name is khan";
+      String[] words = sample.split(" ");
+      String result = "";
+      for(String word:words){
+         StringBuffer s = new StringBuffer(word);
+         word = s.reverse().toString();
+         String firstSub = word.substring(0, 1);
+         String secondSub = word.substring(1);
+         result = result+firstSub.toLowerCase()+secondSub.toUpperCase()+" ";
+      }
+      System.out.println(result);
+   }
+}
