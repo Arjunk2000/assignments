@@ -1,0 +1,175 @@
+Take as input a fraction in the form a/b. Convert the same into lowest terms and print. (Lowest terms examples 3/12 = 1/4).
+package com.packages;
+import java.util.*;
+
+class demo{
+  public static void main(String[] args) {
+
+    int num;
+    int den;
+
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Enter numerator");
+    num = input.nextInt();
+    System.out.println("Enter denominator");
+    den = input.nextInt();
+    int a,b,gcd,t;
+    if(num>den){
+      a = num;
+      b = den;
+    }
+    else{
+      b = num;
+      a = den;
+    }
+    while (b != 0){
+      t = b;
+      b = a % b;
+      a = t;
+    }
+    gcd = a;
+
+    System.out.println("In lowest form = "+num/gcd+"/"+den/gcd);
+  }
+}
+
+
+Calculate the sum of digits of a number given by user. E.g.-
+INUPT : 123        OUPUT : 6
+INUPT : 12345        OUPUT : 15
+
+package com.packages;
+import java.util.Scanner;  
+public class demo   
+{  
+public static void main(String args[])  
+{  
+int number, digit, sum = 0;  
+Scanner sc = new Scanner(System.in);  
+System.out.print("Enter the number: ");  
+number = sc.nextInt();  
+while(number > 0)  
+{  
+digit = number % 10;  
+ 
+sum = sum + digit;  
+
+number = number / 10;  
+}  
+
+System.out.println("Sum of Digits: "+sum);  
+}  
+}
+
+
+A three digit number is called Armstrong number if sum of cube of its digit is equal to number itself.
+E.g.- 153 is an Armstrong number because (13)+(53)+(33) = 153.
+Write all Armstrong numbers between 100 to 500.
+
+package com.packages;
+import java.util.Scanner;  
+class Ans{
+  public static void main(String[] args) {
+    for(int i=1;i<=500;i++){
+      int sum = 0;
+      int t = i;
+      while(t!=0){
+        sum = sum+((t%10)*(t%10)*(t%10));
+        t = t/10;
+      }
+      if(sum==i){
+        System.out.println(i);
+      }
+    }
+  }
+}
+
+Write a program to print all prime number in between 1 to 100.
+
+package com.packages;
+import java.util.Scanner;  
+public class Prime  
+{  
+public static void main(String[] args)   
+    {  
+int ct=0,n=0,i=1,j=1;  
+while(n<25)  
+{  
+j=1;  
+ct=0;  
+while(j<=i)  
+{  
+if(i%j==0)  
+ct++;  
+j++;   
+}  
+if(ct==2)  
+{  
+System.out.printf("%d ",i);  
+n++;  
+}  
+i++;  
+}    
+}  
+}  
+
+Write a program to find prime factor of a number.
+If a factor of a number is prime number then it is its prime factor.
+
+package com.packages;
+import java.util.*;
+
+class Ans{
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+
+    int x;
+
+    System.out.println("Enter the number");
+    x = input.nextInt();
+
+    System.out.println("Prime factors of "+x+" are:");
+
+    for(int i=2;i<=x;i++){
+      
+      if(x%i==0){
+        
+        int p = 0;
+        for(int j=2;j<i;j++){
+          if(i%j==0){
+            //i is not prime
+            p++;
+            break;
+          }
+        }
+        if(p==0){
+          
+          System.out.println(i);
+        }
+      }
+    }
+  }
+}
+
+Write a program in java to find the sum of the even and odd digits of the number which is given as input.
+
+package com.packages;
+import java.util.*;
+
+class Ans{
+  public static void main(String[] args) {
+int num;
+		int evenSum=0,oddSum=0;
+		while(num!=0) {
+			if((num%10)%2==0)	{
+				evenSum+=(num%10);
+			}else {
+				oddSum+=(num%10);
+			}
+			num/=10;
+		}
+		System.out.println("Even Sum: "+evenSum+" Odd Sum: "+oddSum);
+	}
+  }
