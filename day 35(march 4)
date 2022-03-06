@@ -1,0 +1,82 @@
+Create Bank account array and display details of all Account holders, and also accept user input to create account object as discussed in class.
+package com.packages;
+
+import java.util.Scanner;  
+class BankDetails {  
+    private String accountno;  
+    private String name;  
+    private String acc_type;  
+    private long balance;  
+    Scanner sc = new Scanner(System.in);  
+    public void openAccount() {  
+        System.out.print("Enter Account No: ");  
+        accountno = sc.next();  
+        System.out.print("Enter Account type: ");  
+        acc_type = sc.next();  
+        System.out.print("Enter Name: ");  
+        name = sc.next();  
+        System.out.print("Enter Balance: ");  
+        balance = sc.nextLong();  
+    }  
+    
+    public void showAccount() {  
+        System.out.println("Name of account holder: " + name);  
+        System.out.println("Account no.: " + accountno);  
+        System.out.println("Account type: " + acc_type);  
+        System.out.println("Balance: " + balance);  
+    }  
+    
+    public void deposit() {  
+        long amt;  
+        System.out.println("Enter the amount  to deposit: ");  
+        amt = sc.nextLong();  
+        balance = balance + amt;  
+    }  
+    
+    public void withdrawal() {  
+        long amt;  
+        System.out.println("Enter the amount  to withdraw: ");  
+        amt = sc.nextLong();  
+        if (balance >= amt) {  
+            balance = balance - amt;  
+            System.out.println("Balance after withdrawal: " + balance);  
+        } else {  
+            System.out.println("failed transaction..!" );  
+        }  
+    }  
+    
+    public boolean search(String ac_no) {  
+        if (accno.equals(ac_no)) {  
+            showAccount();  
+            return (true);  
+        }  
+        return (false);  
+    }  
+}  
+
+Solve MCQs from https://www.javaguides.net/2020/04/java-oops-quiz-coding-programs.html.
+
+ANSWERS::
+
+1------B. Driving electric car
+
+2------B. public and protected both can be used.
+
+3------a) Base
+          Derived
+          DeriDerived
+          
+4------b) Removing Stmt-1 will make the program compilable and it will print the following:
+           Base: Hello Derived.
+
+          c) Removing Stmt-2 will make the program compilable and it will print the following:
+               Base Derived.
+
+           d) Removing both Stmt-1 and Stmt-2 will make the program compilable and it will print
+             the following: Base Derived.        
+             
+ 5---------C) 13245  
+ 
+ 6---------A) 2
+ 
+ 7--------d)int
