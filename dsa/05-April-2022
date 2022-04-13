@@ -1,0 +1,211 @@
+ Segregate the prime numbers and non- prime numbers in an array.
+Prime numbers should appear left in the array and non prime numbers should appear right in the array
+a[] = {1,4,23,78,54,13,89}
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+ 
+public class Main {
+ 
+   
+    static boolean isPrime(int n)
+    {
+        
+        if (n <= 1)
+            return false;
+ 
+        if (n <= 3)
+            return true;
+ 
+        
+        if (n % 2 == 0 || n % 3 == 0)
+            return false;
+ 
+        
+        for (int i = 5; i * i <= n; i = i + 6) {
+ 
+            // If n is divisible by i
+            // or i + 2, return false
+            if (n % i == 0 || n % (i + 2) == 0)
+                return false;
+        }
+ 
+        
+        return true;
+    }
+ 
+   
+    static void segregatePrimeNonPrime(int arr[], int N)
+    {
+        
+        int left = 0, right = N - 1;
+ 
+       
+        while (left < right) {
+ 
+           
+            while (isPrime(arr[left]))
+                left++;
+ 
+           
+            while (!isPrime(arr[right]))
+                right--;
+ 
+            
+            if (left < right) {
+ 
+                
+                int temp = arr[right];
+                arr[right] = arr[left];
+                arr[left] = temp;
+ 
+                left++;
+                right--;
+            }
+        }
+ 
+      
+        for (int i = 0; i < N; i++)
+            System.out.print(arr[i] + " ");
+    }
+ 
+   
+    public static void main(String[] args)
+    {
+ 
+        int arr[] = { 2, 3, 4, 6, 7, 8, 9, 10 };
+        int N = arr.length;
+ 
+        segregatePrimeNonPrime(arr, N);
+    }
+}
+
+
+move zeros to end in linear TC and single pass.
+
+import java.io.*;
+ 
+class Main
+{
+   
+    static void pushZerosToEnd(int arr[], int n)
+    {
+        int count = 0;  
+ 
+        
+        for (int i = 0; i < n; i++)
+            if (arr[i] != 0)
+                arr[count++] = arr[i]; 
+                                       
+ 
+       
+        while (count < n)
+            arr[count++] = 0;
+    }
+ 
+    
+    public static void main (String[] args)
+    {
+        int arr[] = {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9};
+        int n = arr.length;
+        pushZerosToEnd(arr, n);
+        System.out.println("Array after pushing zeros to the back: ");
+        for (int i=0; i<n; i++)
+            System.out.print(arr[i]+" ");
+    }
+}
+
+
+Sort 0s 1s 2s in linear TC
+
+import java.io.*;
+ 
+class countzot {
+ 
+  
+    static void sort012(int a[], int arr_size)
+    {
+        int lo = 0;
+        int hi = arr_size - 1;
+        int mid = 0, temp = 0;
+        while (mid <= hi) {
+            switch (a[mid]) {
+            case 0: {
+                temp = a[lo];
+                a[lo] = a[mid];
+                a[mid] = temp;
+                lo++;
+                mid++;
+                break;
+            }
+            case 1:
+                mid++;
+                break;
+            case 2: {
+                temp = a[mid];
+                a[mid] = a[hi];
+                a[hi] = temp;
+                hi--;
+                break;
+            }
+            }
+        }
+    }
+ 
+   
+    static void printArray(int arr[], int arr_size)
+    {
+        int i;
+        for (i = 0; i < arr_size; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println("");
+    }
+ 
+    public static void main(String[] args)
+    {
+        int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
+        int arr_size = arr.length;
+        sort012(arr, arr_size);
+        System.out.println("Array after seggregation ");
+        printArray(arr, arr_size);
+    }
+}
+
+
+Find if a given String is Palindrome or not in 2 pointer approach
+package com.dsa;
+public class PalindromeExample {
+ 
+    private static final String STR1 = "uabbcbbau";
+    private static final String STR2 = "isdovosjd";
+ 
+    public static void main(String[] args) {
+        System.out.println("String :"+STR1+" is a palindrome :"+PalindromeExample.isPalindrome2(STR1));
+        System.out.println("String :"+STR2+" is a palindrome :"+PalindromeExample.isPalindrome2(STR2));
+    }
+ 
+    public static boolean isPalindrome(String str){
+ 
+        String reverse = new StringBuffer(str).reverse().toString();
+         
+        if (reverse.equals(str))
+            return true;
+         
+        return false;
+    }
+     
+    public static boolean isPalindrome2(String str){
+ 
+        int start = 0;
+        int end = str.length() - 1;
+        int half = end/2;
+         
+        for(int i = 0; i < half; i++, start++, end-- ){
+            if(str.charAt(start) != str.charAt(end))
+                return false;
+        }
+         
+        return true;
+    }
+}
