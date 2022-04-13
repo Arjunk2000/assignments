@@ -1,0 +1,144 @@
+Write a program to sort an array using insertion sort
+public class InsertionSortExample {  
+    public static void insertionSort(int array[]) {  
+        int n = array.length;  
+        for (int j = 1; j < n; j++) {  
+            int key = array[j];  
+            int i = j-1;  
+            while ( (i > -1) && ( array [i] > key ) ) {  
+                array [i+1] = array [i];  
+                i--;  
+            }  
+            array[i+1] = key;  
+        }  
+    }  
+       
+    public static void main(String a[]){    
+        int[] arr1 = {9,14,3,2,43,11,58,22};    
+        System.out.println("Before Insertion Sort");    
+        for(int i:arr1){    
+            System.out.print(i+" ");    
+        }    
+        System.out.println();    
+            
+        insertionSort(arr1);   
+           
+        System.out.println("After Insertion Sort");    
+        for(int i:arr1){    
+            System.out.print(i+" ");    
+        }    
+    }    
+}    
+
+
+Add elements in arraylist and change the 3rd index element
+
+import java.io.*;
+import java.util.ArrayList;
+ 
+class Main {
+ 
+    
+    public static void main(String[] args)
+    {       
+        ArrayList<String> list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        list.add("C");       
+        list.add(1, "D");
+ 
+       
+        list.add(2, "E");
+ 
+       
+        System.out.println(list);
+    }
+}
+
+Coply all elements from one list to another
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+public class Demo {
+   public static void main(String[] args) {
+      String[] str = { "P", "Q", "R", "S", "T", "U", "V", "W" };
+      int len = str.length;
+      List<String>list1 = new ArrayList<String>();
+      for (int i = 0; i < len; i++)
+         list1.add(str[i]);
+      List<String>list2 = new ArrayList<String>();
+      for (int i = 0; i < len; i++)
+         list2.add("");
+      Collections.copy(list2,list1);
+      ListIterator<String>iterator = list2.listIterator();
+      System.out.println("New List...");
+      while (iterator.hasNext())
+         System.out.println(iterator.next());
+   }
+}
+
+import java.util.*;
+  
+public class GFG {
+    public static void main(String args[])
+    {
+  
+  
+  Sort arraylist in descending order
+        import java.util.*;
+  
+public class Main {
+    public static void main(String args[])
+    {
+  
+        // Get the ArrayList
+        ArrayList<String>
+            list = new ArrayList<String>();
+  
+        // Populate the ArrayList
+        list.add("world");
+        list.add("For");
+        list.add("hi");
+        list.add("snoop");
+        list.add("A computer portal");
+  
+        // Print the unsorted ArrayList
+        System.out.println("Unsorted ArrayList: "
+                           + list);
+  
+        
+        Collections.sort(list, Collections.reverseOrder());
+  
+        
+        System.out.println("Sorted ArrayList "
+                           + "in Descending order : "
+                           + list);
+    }
+}
+
+https://leetcode.com/problems/find-the-difference/
+import java.util.Arrays;
+import java.util.Set ;
+import java.util.HashSet;
+import java.util.*; 
+public class Tutorialcup {
+    public static char findTheDifference(String s, String t) {
+    char[] sortedS = s.toCharArray();
+    char[] sortedT = t.toCharArray();
+    Arrays.sort(sortedS);
+    Arrays.sort(sortedT);
+    for(int i=0;i<s.length();i++){
+      if (sortedS[i] != sortedT[i]) {
+        return sortedT[i];
+      }
+    }
+    return sortedT[s.length()];
+    }
+  public static void main(String[] args) {
+     String s="abcd",t="abcde";
+     char ans=findTheDifference(s,t);
+        System.out.println(ans);
+  }
+}
