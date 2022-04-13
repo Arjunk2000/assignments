@@ -30,8 +30,40 @@ class Solution {
 
 
 https://leetcode.com/problems/valid-anagram/
+class Solution {
+    public boolean isAnagram(String s, String t) {
+ 
+        if(s.length() != t.length()){
+            return false;
+        }
+        
+        char[] str1 = s.toCharArray();
+        char[] str2 = t.toCharArray();
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+     
+        return Arrays.equals(str1, str2);
+    }
+}
 
 https://leetcode.com/problems/sorting-the-sentence/
+class Solution {
+    public String sortSentence(String s) {
+        String[] sArr = s.split("\\s");
+        Arrays.sort(sArr, new Comparator<String>(){
+           public int compare(String s1,String s2){
+               return s1.charAt(s1.length()-1) - s2.charAt(s2.length()-1);
+           } 
+        });
+        String result="";
+        for(int i=0;i<sArr.length-1;i++){
+            result+=sArr[i].substring(0,sArr[i].length()-1);
+            result+=" ";
+        }
+        result+=sArr[sArr.length-1].substring(0,sArr[sArr.length-1].length()-1);
+        return result;
+    }
+}
 
 Search for an element in the Circular Sorted Array.
 Ex- {12,15,2,4,7,9} Search for 7
