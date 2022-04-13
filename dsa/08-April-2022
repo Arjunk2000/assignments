@@ -1,0 +1,134 @@
+Print odd numbers till 31
+import java.util.*;
+class Main{
+ 
+
+static void Even(int L,
+                 int R)
+{
+ 
+  if (R < L)
+  {
+    return;
+  }
+ 
+  if(R % 2 == 0 )
+    Even(L, R - 2);
+  else
+    Even(L, R - 1);
+ 
+ 
+  if (R % 2 == 0)
+  {
+    System.out.print(R + " ");
+  }
+}
+ 
+
+static void Odd(int L,
+                int R)
+{
+  // Base case
+  if (R < L)
+  {
+    return;
+  }
+ 
+  
+  if(R % 2 == 1 )
+    Odd(L, R - 2);
+  else
+    Odd(L, R - 1);
+ 
+ 
+  if (R % 2 == 1)
+  {
+    System.out.print(R + " ");
+  }
+}
+ 
+
+public static void main(String[] args)
+{
+  int L = 1, R = 31;
+  System.out.print("Even numbers:");
+ 
+  Even(L, R);
+  System.out.println();
+ 
+ 
+  System.out.print("Odd numbers:");
+  Odd(L, R);
+}
+}
+
+Find the factorial of a number
+class FactorialExample2{  
+ static int factorial(int n){    
+  if (n == 0)    
+    return 1;    
+  else    
+    return(n * factorial(n-1));    
+ }    
+ public static void main(String args[]){  
+  int i,fact=1;  
+  int number=4;   
+  fact = factorial(number);   
+  System.out.println("Factorial of "+number+" is: "+fact);    
+ }  
+}  
+
+
+Find the nth power of any given number
+class Power {
+  public static void main(String[] args) {
+      
+    int base = 3, powerRaised = 4;
+    int result = power(base, powerRaised);
+
+    System.out.println(base + "^" + powerRaised + "=" + result);
+  }
+
+  public static int power(int base, int powerRaised) {
+    if (powerRaised != 0) {
+
+      
+      return (base * power(base, powerRaised - 1));
+    }
+    else {
+      return 1;
+    }
+  }
+}
+
+
+Print the reverse of a string
+
+public class ReverseStringExample1   
+{  
+  
+public String reverseString(String str)  
+{  
+
+if(str.isEmpty())  
+{  
+System.out.println("String is empty.")  
+
+return str;  
+}   
+else   
+{  
+return reverseString(str.substring(1))+str.charAt(0);  
+}  
+}  
+public static void main(String[] args)   
+{  
+ReverseStringExample1 rs = new ReverseStringExample1();  
+String resultantSting1 = rs.reverseString("ARJUN");  
+String resultantSting2 = rs.reverseString("COMPUTER");  
+String resultantSting3 = rs.reverseString("INDIA");  
+System.out.println(resultantSting1);  
+System.out.println(resultantSting2);  
+System.out.println(resultantSting3);   
+}  
+}  
