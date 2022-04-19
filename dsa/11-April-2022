@@ -1,0 +1,154 @@
+Given two arrays which are sorted in increasing order.
+Find the Union of two arrays
+A [3,5,6,8,9]
+B [5,7,9]
+
+Output - 3,5,6,8,9,7
+
+package com.dsa;
+class FindUnion {
+    static int printUnion(int arr1[], int arr2[], int m, int n)
+    {
+        int i = 0, j = 0;
+        while (i < m && j < n) {
+            if (arr1[i] < arr2[j])
+                System.out.print(arr1[i++] + " ");
+            else if (arr2[j] < arr1[i])
+                System.out.print(arr2[j++] + " ");
+            else {
+                System.out.print(arr2[j++] + " ");
+                i++;
+            }
+        }
+        while (i < m)
+            System.out.print(arr1[i++] + " ");
+        while (j < n)
+            System.out.print(arr2[j++] + " ");
+ 
+        return 0;
+    }
+ 
+    public static void main(String args[])
+    {
+        int arr1[] = { 3,5,6,8,9 };
+        int arr2[] = { 5,7,9 };
+        int m = arr1.length;
+        int n = arr2.length;
+        printUnion(arr1, arr2, m, n);
+    }
+}
+
+
+Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element
+https://practice.geeksforgeeks.org/problems/missing-number-in-array1416/1
+
+import java.util.*;
+import java.util.Arrays;
+class Main {
+    public static int findDisappearedNumbers(int[] nums)
+    {
+        int n=nums.length;
+        int sum=((n+1)*(n+2))/2;
+        for(int i=0;i<n;i++)
+          sum-=nums[i];
+        return sum;
+    }
+    public static void main(String[] args)
+    {
+        int[] a = { 1, 2, 4, 5 };
+        System.out.println(findDisappearedNumbers(a));
+    }
+}
+
+
+Given two arrays: a1[0..n-1] of size n and a2[0..m-1] of size m. Task is to check whether a2[] is a subset of a1[] or not.
+Both the arrays can be sorted or unsorted. It may be assumed that elements in both array are distinct.
+
+https://practice.geeksforgeeks.org/problems/array-subset-of-another-array2317/1"
+
+package com.dsa;
+class Main {
+    static boolean isSubset(int arr1[],
+                            int arr2[], int m,
+                            int n)
+    {
+        int i = 0;
+ 
+        sort(arr1, 0, m - 1);
+        for (i = 0; i < n; i++) {
+            if (binarySearch(arr1,
+                             0, m - 1,
+                             arr2[i]) == -1)
+                return false;
+        }
+ 
+        return true;
+    }
+    static int binarySearch(int arr[],
+                            int low, int high,
+                            int x)
+    {
+        if (high >= low)
+        {
+            /*low + (high - low)/2;*/
+            int mid = (low + high)
+                      / 2;
+            if ((mid == 0 || x > arr[mid - 1])
+                && (arr[mid] == x))
+                return mid;
+            else if (x > arr[mid])
+                return binarySearch(arr,
+                                    (mid + 1), high,
+                                    x);
+            else
+                return binarySearch(arr, low,
+                                    (mid - 1), x);
+        }
+        return -1;
+    }
+    static int partition(int arr[], int low, int high)
+    {
+        int pivot = arr[high];
+        int i = (low - 1);
+       
+        for (int j = low; j < high; j++)
+        {
+            // If current element is smaller than or
+            // equal to pivot
+            if (arr[j] <= pivot)
+            {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        } 
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+ 
+        return i + 1;
+    }
+    static void sort(int arr[], int low, int high)
+    {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+           sort(arr, low, pi - 1);
+            sort(arr, pi + 1, high);
+        }
+    }
+    public static void main(String args[])
+    {
+        int arr1[] = { 11, 1, 13, 21, 3, 7 };
+        int arr2[] = { 11, 3, 7, 1 };
+ 
+        int m = arr1.length;
+        int n = arr2.length;
+ 
+        if (isSubset(arr1, arr2, m, n))
+            System.out.print("arr2[] is subset of arr1[] ");
+        else
+            System.out.print(
+                "arr2[] is not a subset of arr1[]");
+    }
+}
