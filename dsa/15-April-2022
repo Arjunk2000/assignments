@@ -1,0 +1,102 @@
+Rotate a matrix in place by Anti-Clockwise by n times
+
+If n = 1,
+
+1 2 3
+4 5 6
+7 8 9
+
+
+Output:
+3 6 9
+2 5 8
+1 4 7
+
+
+
+If n = 2,
+
+1 2 3
+4 5 6
+7 8 9
+
+9 8 7
+6 5 4
+3 2 1
+
+
+package com.dsa;
+public class RotateMatrix  
+{  
+
+static void leftRotate(int matrix[][], int n)  
+{  
+
+for(int i=0;i<n;i++)  
+{  
+for(int j=i;j<n;j++)  
+{  
+int temp = matrix[i][j];  
+matrix[i][j] = matrix[j][i];  
+matrix[j][i] = temp;  
+}  
+}  
+for(int i=0;i<n;i++)  
+{  
+
+int low = 0;  
+int high = n-1;  
+while(low < high)  
+{  
+int temp = matrix[low][i];  
+matrix[low][i] = matrix[high][i];  
+matrix[high][i] = temp;  
+low++;  
+high--;  
+}  
+}  
+ 
+System.out.println("Matrix After Left Rotation: ");  
+for(int i=0;i<3;i++)  
+{  
+for(int j=0;j<3;j++)  
+{  
+System.out.print(matrix[i][j]+" "+"\t");  
+}  
+System.out.println();  
+}  
+}  
+
+public static void main(String args[])  
+{  
+
+int n=3;  
+ 
+int matrix[][] = new int[][]{ {1,2,3}, {4,5,6} , {7,8,9} };  
+  
+System.out.println("The Original Matrix is: ");  
+ 
+for(int i=0;i<3;i++)  
+{  
+     
+for(int j=0;j<3;j++)  
+{  
+      
+System.out.print(matrix[i][j]+" "+"\t");  
+}  
+System.out.println();  
+}  
+  
+leftRotate(matrix,n);  
+}  
+}  
+
+
+
+Find the number of rows which is sorted in increasing order in a given matrix
+
+int a[][] = { { 1, 2, 3, 4 }, { 4, 6, 7, 1 }, { 2, 3, 7, 9 }, { 7, 12, 15, 7 } };
+
+Count : 2
+
+Explaination -> row 0 and row 2 are sorted in increasing order
