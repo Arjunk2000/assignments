@@ -1,0 +1,102 @@
+Print the sum of the boundary elements and diagonal elements in a given matrix of size m and n
+package com.dsa;
+import java.util.*;
+ 
+class Main{
+    public static int N = 4;
+     
+  
+    static void diagonalBoundarySum(int arr[][]){
+        int requiredSum = 0;
+         
+        
+        for (int i = 0; i < N; i++) {
+     
+            
+            for (int j = 0; j < N; j++) {
+     
+                if (i == j || (i + j) == N - 1) {
+                    requiredSum += arr[i][j];
+                }
+     
+               
+                else if (i == 0 || j == 0 || i == N - 1|| j == N - 1) {
+                    requiredSum += arr[i][j];
+                }
+            }
+        }
+     
+    
+        System.out.println(requiredSum);
+    }
+   
+    public static void main(String args[])
+    {
+        int arr[][] = { { 1, 2, 3, 4 },{ 1, 2, 3, 4 },
+                        { 1, 2, 3, 4 },{ 1, 2, 3, 4 } };
+     
+        diagonalBoundarySum(arr);
+         
+    }
+}
+
+
+Print the prime numbers in the upper traingle of a 2D Matrix
+
+class Main
+{
+    
+    static void lower(int matrix[][],
+                      int row, int col)
+    {
+        int i, j;
+        for (i = 0; i < row; i++)
+        {
+            for (j = 0; j < col; j++)
+            {
+                if (i < j)
+                {
+                    System.out.print("0" + " ");
+                }
+                else
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+     
+   
+    static void upper(int matrix[][],
+                      int row, int col)
+    {
+        int i, j;
+        for (i = 0; i < row; i++)
+        {
+            for (j = 0; j < col; j++)
+            {
+                if (i > j)
+                {
+                    System.out.print("0" + " ");
+                }
+                else
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+      
+    
+    public static void main(String args[])
+    {
+        int matrix[][] = {{1, 2, 3},
+                          {4, 5, 6},
+                          {7, 8, 9}};
+        int row = 3, col = 3;
+         
+        System.out.println("Lower triangular matrix: ");
+        lower(matrix, row, col);
+         
+        System.out.println("Upper triangular matrix: ");
+        upper(matrix, row, col);
+    }
+}
