@@ -1,0 +1,95 @@
+Solve the programs using recursion -
+1. Find the maximum number in an array
+a[] = { 3,5,7,1,0};
+
+Output - 7
+
+
+import java.util.*;
+class GFG {
+    public static int findMinRec(int A[], int n)
+    {
+      if(n == 1)
+        return A[0];
+         
+        return Math.min(A[n-1], findMinRec(A, n-1));
+    }
+     
+    public static void main(String args[])
+    {
+        int A[] = {3,5,7,1,0};
+        int n = A.length;
+        System.out.println(findMinRec(A, n));
+    }
+}
+ 
+ 
+ Find the sum of all numbers in an array
+ 
+ import java.util.*;
+  
+public class Main 
+{
+    
+     public static int calculate_sum(int arr[], int length)
+    {
+        
+        if (length == -1) 
+        {
+            return 0;
+        }
+       
+        return arr[length] + calculate_sum(arr,length - 1);
+        
+    }
+    
+    public static void main(String[] args)
+    {
+        
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the array size: ");
+        int n=sc.nextInt();
+        int total_sum = 0;
+        //Array Creation and Initialization
+        int arr[] = new int[n];
+        System.out.println("Enter the array elements: ");
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        
+        total_sum = calculate_sum(arr, n-1);
+        System.out.println("The total of N numbers is : "+ total_sum);
+    }
+}
+
+Print the reverse of a number
+
+import java.util.Scanner;  
+public class ReverseNumber 
+{  
+
+public static void reverseNumber(int number)   
+{  
+if (number < 10)   
+{  
+
+System.out.println(number);  
+return;  
+}  
+else   
+{  
+System.out.print(number % 10);  
+reverseNumber(number/10);  
+}  
+}  
+public static void main(String args[])  
+{  
+System.out.print("Enter the number that you want to reverse: ");  
+Scanner sc = new Scanner(System.in);  
+int num = sc.nextInt();  
+System.out.print("The reverse of the given number is: ");  
+
+reverseNumber(num);  
+}  
+}  
