@@ -1,0 +1,191 @@
+Create a linked list and add ten values to it by taking it from the user.
+Delete all nodes which are greater than 40
+
+class LinkedList {
+    Node head;
+ 
+   
+    class Node {
+        int data;
+        Node next;
+        Node(int d)
+        {
+            data = d;
+            next = null;
+        }
+    }
+ 
+   
+    void delLesserNodes()
+    {
+       
+        reverseList();
+ 
+       
+        _delLesserNodes();
+ 
+        reverseList();
+    }
+ 
+    
+    void _delLesserNodes()
+    {
+        Node current = head;
+ 
+        /* Initialise max */
+        Node maxnode = head;
+        Node temp;
+ 
+        while (current != null && current.next != null) {
+          
+            if (current.next.data < maxnode.data) {
+                temp = current.next;
+                current.next = temp.next;
+                temp = null;
+            }
+ 
+            
+            else {
+                current = current.next;
+                maxnode = current;
+            }
+        }
+    }
+ 
+  
+    void push(int new_data)
+    {
+     
+        Node new_node = new Node(new_data);
+ 
+        new_node.next = head;
+ 
+      
+        head = new_node;
+    }
+ 
+  
+    void reverseList()
+    {
+        Node current = head;
+        Node prev = null;
+        Node next;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+ 
+  
+    void printList()
+    {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+ 
+   
+    public static void main(String args[])
+    {
+        LinkedList llist = new LinkedList();
+ 
+      
+        llist.push(3);
+        llist.push(2);
+        llist.push(6);
+        llist.push(5);
+        llist.push(11);
+        llist.push(10);
+        llist.push(15);
+        llist.push(12);
+ 
+        System.out.println("Given Linked List");
+        llist.printList();
+ 
+        llist.delLesserNodes();
+ 
+        System.out.println("Modified Linked List");
+        llist.printList();
+    }
+} 
+
+
+Print the node which is at index 5
+
+Input - 10->20->20->40->50->60->70->null
+Output - 50
+
+
+class Main
+{
+     
+// Linked List Node
+static class Node
+{
+    int data;
+    Node next;
+};
+ 
+
+static Node push( Node head_ref, int new_data)
+{
+    Node new_node = new Node();
+ 
+    new_node.data = new_data;
+    new_node.next = (head_ref);
+    (head_ref) = new_node;
+    return head_ref;
+}
+
+static void printSecondList(Node l1, Node l2)
+{
+    Node temp = l1;
+    Node temp1 = l2;
+ 
+    while (temp != null)
+    {
+        int i = 1;
+ 
+      
+        while (i < temp.data)
+        {
+           
+            temp1 = temp1.next;
+            i++;
+        }
+ 
+        System.out.print( temp1.data + " ");
+ 
+        temp = temp.next;
+ 
+       
+        temp1 = l2;
+    }
+}
+ 
+
+public static void main(String args[])
+{
+    Node l1 = null, l2 = null;
+ 
+    l1 = push(l1, 5);
+    
+ 
+    
+    l2 = push(l2, 10);
+    l2 = push(l2, 20);
+    l2 = push(l2, 30);
+    l2 = push(l2, 40);
+    l2 = push(l2, 50);
+     l2 = push(l2, 60);
+      l2 = push(l2, 70);
+ 
+    printSecondList(l1, l2);
+}
+}
