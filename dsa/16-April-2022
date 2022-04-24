@@ -93,3 +93,22 @@ System.out.print("The reverse of the given number is: ");
 reverseNumber(num);  
 }  
 }  
+
+
+Print the negative numbers in an array
+
+public class{
+public static int countNegative(double[] numbers, int count){  
+   if(count == numbers.length){  
+        return 0;  
+    }
+    int sum = countNegative(numbers, count + 1);  
+    if(numbers[count] < 0){  
+          sum++;  
+    }  
+    return sum;  
+  
+  double a[]={-12.0,1.0,0.0,23.0,-23.0,-9.0};  
+System.out.println(countNegative(a, 0));  
+}
+}
