@@ -1,0 +1,130 @@
+Create a linked list and add the following elements to it - 2,4,1,3,8,5
+Search for the number 3 and display ts index
+
+import java.util.LinkedList;
+  
+class SearchInALinkedList {
+    public static void main(String[] args)
+    {
+        // Initializing the Linked List
+        LinkedList<Integer> ll = new LinkedList<>();
+  
+        // Adding elements to the Linked List
+        ll.add(-2);
+        ll.add(4);
+        ll.add(1);
+        ll.add(3);
+        ll.add(8);
+        ll.add(5);
+        ll.add(7);
+  
+        
+        int element = 3;
+  
+        
+        int ans = -1;
+  
+        
+        for (int i = 0; i < ll.size(); i++) {
+  
+            
+            int llElement = ll.get(i);
+  
+          
+            if (llElement == element) {
+  
+                
+                ans = i;
+                break;
+            }
+        }
+      
+        if (ans == -1) {
+            System.out.println("Element not found");
+        }
+        else {
+            System.out.println(
+                "Element found in Linked List at " + ans);
+        }
+    }
+}
+
+Create a liked list and add the following elements to it - 2,4,1,3,8,5.
+Add the element 20 at the end
+
+Output - 2,4,1,3,8,5,20
+
+
+public class InsertEnd {  
+  
+   
+    class Node{  
+        int data;  
+        Node next;  
+  
+        public Node(int data) {  
+            this.data = data;  
+            this.next = null;  
+        }  
+    }  
+  
+   
+    public Node head = null;  
+    public Node tail = null;  
+  
+   
+    public void addAtEnd(int data) {  
+        
+        Node newNode = new Node(data);  
+  
+       
+        if(head == null) {  
+            //If list is empty, both head and tail will point to new node  
+            head = newNode;  
+            tail = newNode;  
+        }  
+        else {  
+          
+            tail.next = newNode;  
+           
+            tail = newNode;  
+        }  
+    }  
+  
+   
+    public void display() {  
+        
+        Node current = head;  
+        if(head == null) {  
+            System.out.println("List is empty");  
+            return;  
+        }  
+        System.out.println("Adding nodes to the end of the list: ");  
+        while(current != null) {  
+             
+            System.out.print(current.data + " ");  
+            current = current.next;  
+        }  
+        System.out.println();  
+    }  
+  
+    public static void main(String[] args) {  
+  
+        InsertEnd sList = new InsertEnd();  
+  
+        
+        sList.addAtEnd(2); 2,4,1,3,8,5.
+      sList.addAtEnd(4);
+      sList.addAtEnd(1);
+       sList.addAtEnd(3);
+        sList.addAtEnd(8);
+         sList.addAtEnd(5);
+        sList.display();  
+  
+        
+  
+        
+        sList.addAtEnd(20);  
+        sList.display();  
+    }  
+}  
