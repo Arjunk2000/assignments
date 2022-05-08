@@ -1,0 +1,43 @@
+1. Encrypt the string - 2
+https://practice.geeksforgeeks.org/problems/encrypt-the-string-21117/1/
+
+class Solution {
+   static String encryptString(String S){
+        StringBuilder sb = new StringBuilder();
+     int count = 1;
+     int i=S.length()-1;
+     while(i>=0) {
+      if(i-1>=0 && S.charAt(i)==S.charAt(i-1)) {
+       count++;
+      }else {
+       sb.append(Integer.toHexString(count)).append(S.charAt(i));
+       count = 1;
+      }
+      i--;
+     }
+        return sb.toString();
+   }
+}
+
+
+2. Roatating the String check
+https://practice.geeksforgeeks.org/problems/check-if-string-is-rotated-by-two-places-1587115620/1
+
+class Solution
+{
+   public static boolean isRotated(String str1, String str2)
+   {
+       String antitemp=str1.substring(0,2);
+       String finAnti=str1.substring(2);
+        String clocktemp=str1.substring(str1.length()-2);
+       String finclock=str1.substring(0,str1.length()-2);
+       if((finAnti+antitemp).equals(str2)){
+          return true; 
+       }else if((clocktemp+finclock).equals(str2)){
+           return true;
+       }else{
+           return false;
+       }
+       
+           
+   }
