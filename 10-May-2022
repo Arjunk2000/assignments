@@ -1,0 +1,46 @@
+"Use Hashing to Solve these problems:
+
+1. Check if the sentence is Pangram
+https://leetcode.com/problems/check-if-the-sentence-is-pangram/
+
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        Set<Character> uniqueChars = new HashSet<>();
+        for (char c : sentence.toCharArray()) {
+            if (!uniqueChars.contains(c)) {
+                uniqueChars.add(Character.toLowerCase(c));
+            }
+        }
+        return(uniqueChars.size()== 26);
+    }
+}
+ha
+
+2. Valid Anagram
+https://leetcode.com/problems/valid-anagram/
+
+class Solution {
+public boolean isAnagram(String s, String t) {
+    if(s.length()!=t.length()) return false;
+	
+    HashMap<Character,Integer> sMap = new HashMap<>();
+    HashMap<Character,Integer> tMap = new HashMap<>();
+
+    for(var ch:s.toCharArray()){
+        var count = sMap.getOrDefault(ch, 0);
+        sMap.put(ch,count+1);
+    }
+
+    for(var ch:t.toCharArray()){
+        var count = tMap.getOrDefault(ch, 0);
+        tMap.put(ch,count+1);
+    }
+  
+
+    for(var key: sMap.keySet()){
+        if(!Objects.equals(sMap.get(key), tMap.get(key))) return false;
+        if(!tMap.containsKey(key)) return false;
+    }
+    return true;  
+}
+}
