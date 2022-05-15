@@ -1,0 +1,22 @@
+1. Write a program to read string and find the product of all the digits in that string.
+
+String s = "as13r52e1u2"
+Output -> 60
+
+2. Remove all the special characters in a given string
+String s = "afgt%y^u#";
+Output -> afgtyu
+
+3. Write a program to read a string and count total number of digits, alphabets and special characters.
+String s = "12as%^y&"
+
+Output -
+Digits : 2
+Alphabets : 3
+Special Characters : 3
+
+4. Remove all the special characters and Upprcase from the String
+
+String s = "Aste6%e#12(loP"
+
+Output - ste6e12lo
