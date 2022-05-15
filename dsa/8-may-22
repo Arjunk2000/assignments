@@ -1,0 +1,50 @@
+"1. Equal 0, 1 and 2
+https://practice.geeksforgeeks.org/problems/equal-0-1-and-23208/1/
+
+class Solution 
+{ 
+   long getSubstringWithEqual012(String str) 
+   { 
+       HashMap<String, Integer> map = new HashMap<>();
+       map.put("0*0", 1);
+       int[] c = {0,0,0};
+       int ans = 0;
+       for (int i = 0; i < str.length(); i++) {
+           int n = str.charAt(i) - '0';
+           c[n]++;
+           String key = (c[0] - c[1]) + "*" + (c[1] - c[2]);
+           ans += map.getOrDefault(key, 0);
+           map.put(key, map.getOrDefault(key, 0) + 1);
+       }
+       return ans;
+   }
+}
+
+2. Buddy Strings
+https://leetcode.com/problems/buddy-strings/"
+
+class Solution {
+    public boolean buddyStrings(String s, String goal) {
+        int count = 0;
+        int temp = 0;
+        if(s.length() != goal.length())
+            return false;
+        for(int i=0; i<s.length(); i++){
+            if(s.charAt(i) != goal.charAt(i)){
+                count += 1;
+                if(count == 2){
+                    if(s.charAt(temp) != goal.charAt(i) || s.charAt(i) != goal.charAt(temp))
+                        return false;
+                }
+                temp = i;
+            }
+        }
+        if(count == 2)
+            return true;
+        HashSet<String> set = new HashSet<>();
+        for(int i=0; i<goal.length(); i++){
+            set.add(Character.toString(goal.charAt(i)));
+        }
+        return (count == 0 && set.size() < goal.length()) ? true : false;
+    }
+}
